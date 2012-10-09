@@ -4,4 +4,4 @@ This blog is automatically transformed by [Jekyll](http://github.com/mojombo/jek
 
 Please, go read about [Jekyll](http://github.com/mojombo/jekyll) and give it a whirl.
 
-Test git hook 3
+Test git hook 5
