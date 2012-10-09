@@ -1,3 +1,1 @@
-<?php 
-shell_exec('./github_hook.sh'); 
-?>
+<?php shell_exec('git pull'); ?>
