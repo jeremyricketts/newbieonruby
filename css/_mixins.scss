@@ -1,0 +1,345 @@
+// Jeremy's mixins at the bottom 
+
+
+// ---- CSS3 SASS MIXINS ----
+// https://github.com/madr/css3-sass-mixins
+//  
+//  Copyright (C) 2011 by Anders Ytterström
+//  
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
+
+// ---- LEGACY IE SUPPORT USING FILTERS ----
+//  Should IE filters be used or not?
+//  PROS: gradients, drop shadows etc will be handled by css.
+//  CONS: will harm the site performance badly, 
+//        especially on sites with heavy rendering and scripting. 
+$useIEFilters: 0; 
+// might be 0 or 1. disabled by default.
+// ---- /LEGACY IE SUPPORT USING FILTERS ----
+
+
+@mixin background-size ($value) {
+  -webkit-background-size: $value;
+		  background-size: $value;
+}
+
+@mixin border-image ($path, $offsets, $repeats) {
+	 -moz-border-image: $path $offsets $repeats;
+	   -o-border-image: $path $offsets $repeats;
+  -webkit-border-image: $path $offsets $repeats;
+		  border-image: $path $offsets $repeats;
+}
+
+@mixin border-radius ($values) {
+	 -moz-border-radius: $values;
+  -webkit-border-radius: $values;
+		  border-radius: $values;
+			 -moz-background-clip: padding; 
+		  -webkit-background-clip: padding-box; 
+				  background-clip: padding-box;
+}
+
+// Sample usage: @include box-shadow(-1px -1px 2px rgba(0, 0, 0, 0.05), 0 1px 1px white inset)
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
+	$params: $shadow1;
+	@if $shadow2 { 
+		$params: $shadow1, $shadow2; 
+	}
+	@if $shadow3 != false { 
+		$params: $shadow1, $shadow2, $shadow3; 
+	}
+	@if $shadow4 != false { 
+		$params: $shadow1, $shadow2, $shadow3, $shadow4; 
+	}
+	@if $shadow5 != false { 
+		$params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5; 
+	}
+	-webkit-box-shadow: $params;
+	-moz-box-shadow: $params;
+	box-shadow: $params;
+}
+// Replaced by mixin above
+// @mixin box-shadow ($x, $y, $offset, $hex, $ie: $useIEFilters) {
+// 	 -moz-box-shadow: $x $y $offset $hex;
+//   -webkit-box-shadow: $x $y $offset $hex;
+// 		  box-shadow: $x $y $offset $hex;
+//   @if $ie == 1 {
+// 	$iecolor: '#' + red($hex) + green($hex) + blue($hex);
+// 	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}');
+// 	-ms-filter: quote(progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}'));
+//   }
+// }
+
+@mixin box-sizing($value) {
+	 -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+		  box-sizing: $value;
+}
+
+// requires sass 3.2
+//@mixin keyframes {
+//     @-moz-keyframes { @content; }
+//      @-ms-keyframes { @content; }
+//       @-o-keyframes { @content; }
+//  @-webkit-keyframes { @content; }
+//          @keyframes { @content; }
+//}
+
+@mixin linear-gradient($from, $to, $ie: $useIEFilters) {
+  @if $ie != 1 { background-color: $to; }
+  
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $from),color-stop(1, $to));
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image: -moz-linear-gradient(top, $from, $to);
+  background-image: -ms-linear-gradient(top, $from, $to);
+  background-image: -o-linear-gradient(top, $from, $to);
+  background-image: linear-gradient(top, bottom, $from, $to);
+
+  @if $ie == 1 { 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+	-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'));
+  }
+}
+
+@mixin rgba-bg ($hex, $alpha, $ie: $useIEFilters) {     
+  @if $ie == 1 { 
+	background-color: none;
+	$hexopac: ie-hex-str(rgba($hex, $alpha));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}}');
+	-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}'));
+  }
+  @else {
+	background-color: $hex;
+	background-color: rgba($hex, $alpha);
+  }
+}
+
+@mixin perspective($perspective) {
+	 -moz-perspective: $perspective;
+	  -ms-perspective: $perspective;
+  -webkit-perspective: $perspective;
+		  perspective: $perspective;
+	 -moz-transform-style: preserve-3d;
+	  -ms-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+}
+
+@mixin transform ($transforms) {
+	   -moz-transform: $transforms;
+		 -o-transform: $transforms;
+		-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+		  transform: $transforms;
+}
+
+	@mixin matrix ($a, $b, $c, $d, $e, $f) {
+		   -moz-transform: matrix($a, $b, $c, $d, #{$e}px, #{$f}px);
+			 -o-transform: matrix($a, $b, $c, $d, $e, $f);
+			-ms-transform: matrix($a, $b, $c, $d, $e, $f);
+		-webkit-transform: matrix($a, $b, $c, $d, $e, $f);
+			  transform: matrix($a, $b, $c, $d, $e, $f);
+	}
+
+	@mixin rotate ($deg) {
+	  @include transform(rotate(#{$deg}deg));
+	}
+
+	@mixin scale ($size) {
+	  @include transform(scale(#{$size}));
+	}
+
+	@mixin translate ($x, $y) {
+		@include transform(translate($x, $y));
+	}
+
+@mixin transition ($value) {
+	 -moz-transition: $value;
+	   -o-transition: $value;
+	  -ms-transition: $value;
+  -webkit-transition: $value;
+		  transition: $value;
+}
+
+// ==== /CSS3 SASS MIXINS ====
+
+// JR ADDED:
+@mixin columns ($count, $gap, $rule) {
+	padding:0;
+	-webkit-column-count: $count;
+	-moz-column-count: $count;
+	column-count: $count;
+	-webkit-column-gap: $gap;
+	-moz-column-gap: $gap;
+	column-gap: $gap;
+	-webkit-column-rule: $rule; // Example: 1em solid #000
+	-moz-column-rule: $rule;
+	column-rule: $rule;
+}
+
+@mixin column-break-before ($value) { //Possible Values: auto, always, avoid, left, right
+	-webkit-column-break-before:$value;
+	-moz-column-break-before:$value;
+	column-break-before:$value;
+}
+// Example:
+// .articleListing {
+// 	@include columns(3, 20px, 1px solid #666);
+// 	h3 {
+// 		@include column-break-before(avoid);
+// 	}
+// }
+
+// https://github.com/michaelsacca/Fancy-Compass-Button-Mixin
+@mixin btn($btnColor, $darkORlight) {
+	@if $darkORlight == 'dark' { 
+		color:darken($btnColor, 50%);
+		text-shadow: 0 1px 0 lighten($btnColor, 10%);
+		border:1px solid darken($btnColor, 20%);
+		@include linear-gradient($btnColor, darken($btnColor, 20%));
+	}
+	@if $darkORlight == 'light' { 
+		color:lighten($btnColor, 70%);
+		text-shadow: 0 1px 0 darken($btnColor, 50%);
+		border:1px solid darken($btnColor,5%);
+		@include linear-gradient($btnColor, darken($btnColor, 12%));
+	}
+	cursor: pointer;
+	display:inline-block;
+	padding: .5em 1em;
+	font-size: $fontSize;
+	@include border-radius(4px);
+	@include box-shadow(0 1px 0 rgba(255,255,255,.7),0 0 2px lighten($btnColor, 50%) inset);
+	text-decoration:none;
+	@include transition(all .1s ease-in-out);
+	&:hover {
+			//border-color: darken($btnColor, 30%);
+			@include box-shadow(0 0 4px rgba(0,0,0,.3));
+			text-decoration: none;
+			border-color: darken($btnColor, 30%);
+			@if $darkORlight == 'dark' { 
+				@include linear-gradient(lighten($btnColor, 10%), darken($btnColor, 20%));
+			}
+			@if $darkORlight == 'light' { 
+				@include linear-gradient(lighten($btnColor, 10%), darken($btnColor, 12%));
+			}
+	}
+	&:active { // Adds Styles When Button Is Pushed
+			@if $darkORlight == 'dark' { 
+				@include linear-gradient(darken($btnColor, 20%), $btnColor);
+			}
+			@if $darkORlight == 'light' { 
+				@include linear-gradient(darken($btnColor, 12%), $btnColor);
+			}
+	}
+}
+
+// https://gist.github.com/636663
+// Sample 2-row buttons
+// a.multi-line-button {
+//   @include multi-line-button(#60a3d8);
+//   &.green {
+//     @include color-multi-line-button(#63bb4a);
+//   }
+//   &.red {
+//     @include color-multi-line-button(#bf4040);
+//   }
+//   &.orange {
+//     @include color-multi-line-button(#d98026);
+//   }
+// }
+@mixin multi-line-button($baseColor) {
+	//@include background-clip("padding-box");
+	border-width: 1px;
+	@include border-radius(6px);
+	border-style: solid;
+	color: white;
+	display: block;
+	margin: 0.2em auto;
+	padding: 12px 15px;
+	text-align: center;
+	text-decoration: none;
+	.title {
+		font-size: 24px;
+		font-weight: bold;
+		display: block;
+		opacity:.9;
+	}
+	.subtitle {
+		font-size: 14px;
+		display: block;
+		margin-top: 4px;
+		opacity:.7;
+	}
+	&:hover {
+		.title {
+			opacity:1;
+		}
+		.subtitle {
+			opacity:.8;
+		}
+  	}
+	&:active {
+		padding: 13px 15px 11px;
+	}
+}
+
+@mixin color-multi-line-button($baseColor) {
+	$dark-color: darken($baseColor, 10%);
+	$light-color: lighten($baseColor, 10%);
+	$border-color: darken($baseColor, 20%);
+	$light-border-color: lighten($baseColor, 0%);
+	$highlight-color: transparentize(desaturate(lighten($baseColor, 40%), 50%), 0.5);
+	$shadow-color: darken($baseColor, 15%);
+	$text-shadow-color: darken($baseColor, 15%);
+	background-color: $baseColor;
+	@include linear-gradient($light-color, $dark-color);
+	border-color: $border-color;
+	border-left-color: $light-border-color;
+	border-top-color: $light-border-color;
+	@include box-shadow(1px 1px 0 $highlight-color inset);
+	color: white;
+	text-shadow: 0 1px 2px $text-shadow-color;
+	&:hover, &:focus {
+		@include linear-gradient(lighten($light-color, 5%), $dark-color);
+  	}
+  	&:active, &.depressed {
+		@include linear-gradient(desaturate(lighten($dark-color, 5%), 10%), desaturate($baseColor, 10%));
+		@include box-shadow(none);
+		border-color: $border-color;
+	}
+}
+
+@mixin input-placeholder($color) {
+      &.placeholder {
+        color: $color; 
+        }
+      &:-moz-placeholder {
+        color: $color; 
+        }
+      &::-webkit-input-placeholder {
+        color: $color; 
+        } 
+    }
+
+
+
+
+
