@@ -207,48 +207,60 @@ $useIEFilters: 0;
 // 	}
 // }
 
-// https://github.com/michaelsacca/Fancy-Compass-Button-Mixin
+// Updated by JR for new Compass compatibility
 @mixin btn($btnColor, $darkORlight) {
-	@if $darkORlight == 'dark' { 
-		color:darken($btnColor, 50%);
-		text-shadow: 0 1px 0 lighten($btnColor, 10%);
-		border:1px solid darken($btnColor, 20%);
-		@include linear-gradient($btnColor, darken($btnColor, 20%));
-	}
-	@if $darkORlight == 'light' { 
-		color:lighten($btnColor, 70%);
-		text-shadow: 0 1px 0 darken($btnColor, 50%);
-		border:1px solid darken($btnColor,5%);
-		@include linear-gradient($btnColor, darken($btnColor, 12%));
-	}
-	cursor: pointer;
-	display:inline-block;
-	padding: .5em 1em;
-	font-size: $fontSize;
-	@include border-radius(4px);
-	@include box-shadow(0 1px 0 rgba(255,255,255,.7),0 0 2px lighten($btnColor, 50%) inset);
-	text-decoration:none;
-	@include transition(all .1s ease-in-out);
-	&:hover {
-			//border-color: darken($btnColor, 30%);
-			@include box-shadow(0 0 4px rgba(0,0,0,.3));
-			text-decoration: none;
-			border-color: darken($btnColor, 30%);
-			@if $darkORlight == 'dark' { 
-				@include linear-gradient(lighten($btnColor, 10%), darken($btnColor, 20%));
-			}
-			@if $darkORlight == 'light' { 
-				@include linear-gradient(lighten($btnColor, 10%), darken($btnColor, 12%));
-			}
-	}
-	&:active { // Adds Styles When Button Is Pushed
-			@if $darkORlight == 'dark' { 
-				@include linear-gradient(darken($btnColor, 20%), $btnColor);
-			}
-			@if $darkORlight == 'light' { 
-				@include linear-gradient(darken($btnColor, 12%), $btnColor);
-			}
-	}
+  @if $darkORlight == 'dark' { 
+    color:darken($btnColor, 50%);
+    text-shadow: 0 1px 0 lighten($btnColor, 10%);
+    border:1px solid darken($btnColor, 20%);
+    @include background-image(linear-gradient(top center, $btnColor, darken($btnColor, 20%)));
+  }
+  @if $darkORlight == 'light' { 
+    color:lighten($btnColor, 70%);
+    text-shadow: 0 1px 0 darken($btnColor, 50%);
+    border:1px solid darken($btnColor,5%);
+    @include background-image(linear-gradient(top center, $btnColor, darken($btnColor, 12%)));
+  }
+  cursor: pointer;
+  display:inline-block;
+  padding: .5em 1em;
+  font-size: $fontSize;
+  @include border-radius(4px);
+  @include box-shadow(0 1px 0 rgba(255,255,255,.7),0 0 2px lighten($btnColor, 50%) inset);
+  text-decoration:none;
+  @include transition(all .1s ease-in-out);
+  &:hover {
+      //@include box-shadow(0 0 4px rgba(0,0,0,.3));
+      text-decoration: none;
+      //border-color: darken($btnColor, 10%);
+      @if $darkORlight == 'dark' { 
+        @include background-image(linear-gradient(top center, lighten($btnColor, 10%), darken($btnColor, 20%)));
+      }
+      @if $darkORlight == 'light' { 
+        @include background-image(linear-gradient(top center, lighten($btnColor, 10%), darken($btnColor, 12%)));
+      }
+  }
+  &:active { // Adds Styles When Button Is Pushed
+      @if $darkORlight == 'dark' { 
+        @include background-image(linear-gradient(top center, darken($btnColor, 20%), $btnColor));
+      }
+      @if $darkORlight == 'light' { 
+        @include background-image(linear-gradient(top center, darken($btnColor, 12%), $btnColor));
+      }
+  }
+}
+
+// Input Placeholder coloring
+@mixin input-placeholder($color) {
+  &.placeholder {
+    color: $color; 
+    }
+  &:-moz-placeholder {
+    color: $color; 
+    }
+  &::-webkit-input-placeholder {
+    color: $color; 
+    } 
 }
 
 // https://gist.github.com/636663
@@ -265,79 +277,70 @@ $useIEFilters: 0;
 //     @include color-multi-line-button(#d98026);
 //   }
 // }
-@mixin multi-line-button($baseColor) {
-	//@include background-clip("padding-box");
-	border-width: 1px;
-	@include border-radius(6px);
-	border-style: solid;
-	color: white;
-	display: block;
-	margin: 0.2em auto;
-	padding: 12px 15px;
-	text-align: center;
-	text-decoration: none;
-	.title {
-		font-size: 24px;
-		font-weight: bold;
-		display: block;
-		opacity:.9;
-	}
-	.subtitle {
-		font-size: 14px;
-		display: block;
-		margin-top: 4px;
-		opacity:.7;
-	}
-	&:hover {
-		.title {
-			opacity:1;
-		}
-		.subtitle {
-			opacity:.8;
-		}
-  	}
-	&:active {
-		padding: 13px 15px 11px;
-	}
-}
-
-@mixin color-multi-line-button($baseColor) {
-	$dark-color: darken($baseColor, 10%);
-	$light-color: lighten($baseColor, 10%);
-	$border-color: darken($baseColor, 20%);
-	$light-border-color: lighten($baseColor, 0%);
-	$highlight-color: transparentize(desaturate(lighten($baseColor, 40%), 50%), 0.5);
-	$shadow-color: darken($baseColor, 15%);
-	$text-shadow-color: darken($baseColor, 15%);
-	background-color: $baseColor;
-	@include linear-gradient($light-color, $dark-color);
-	border-color: $border-color;
-	border-left-color: $light-border-color;
-	border-top-color: $light-border-color;
-	@include box-shadow(1px 1px 0 $highlight-color inset);
-	color: white;
-	text-shadow: 0 1px 2px $text-shadow-color;
-	&:hover, &:focus {
-		@include linear-gradient(lighten($light-color, 5%), $dark-color);
-  	}
-  	&:active, &.depressed {
-		@include linear-gradient(desaturate(lighten($dark-color, 5%), 10%), desaturate($baseColor, 10%));
-		@include box-shadow(none);
-		border-color: $border-color;
-	}
-}
-
-@mixin input-placeholder($color) {
-      &.placeholder {
-        color: $color; 
-        }
-      &:-moz-placeholder {
-        color: $color; 
-        }
-      &::-webkit-input-placeholder {
-        color: $color; 
-        } 
+@mixin multi-line-button($base-color) {
+  @include background-clip("padding-box");
+  border-width: 1px;
+  @include border-radius(6px);
+  border-style: solid;
+  color: white;
+  display: block;
+  margin: 0.2em auto;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    @include opacity(0.9);
+  }
+  .subtitle {
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+    @include opacity(0.7);
+  }
+  &:hover {
+    .title {
+      @include opacity(1);
     }
+    .subtitle {
+      @include opacity(0.8);
+    }
+  }
+  &:active {
+    padding: 13px 15px 11px;
+  }
+  @if $base-color != none {
+    @include color-multi-line-button($base-color);
+  }
+}
+
+@mixin color-multi-line-button($base-color) {
+  $dark-color: darken($base-color, 10%);
+  $light-color: lighten($base-color, 10%);
+  $border-color: darken($base-color, 20%);
+  $light-border-color: lighten($base-color, 0%);
+  $highlight-color: transparentize(desaturate(lighten($base-color, 40%), 50%), 0.5);
+  $shadow-color: darken($base-color, 15%);
+  $text-shadow-color: darken($base-color, 15%);
+  background-color: $base-color; // Fallback
+  @include background-image(linear-gradient(top center, $light-color, $dark-color));
+  border-color: $border-color;
+  border-left-color: $light-border-color;
+  border-top-color: $light-border-color;
+  @include box-shadow($highlight-color 1px 1px 0 0 inset);
+  color: white;
+  @include text-shadow($text-shadow-color 0 1px 2px);
+  &:hover, &:focus {
+    @include background-image(linear-gradient(top center, lighten($light-color, 10%), $dark-color));
+  }
+  &:active, &.depressed {
+	@include background-image(linear-gradient(top center, desaturate(lighten($dark-color, 5%), 10%), desaturate($base-color, 10%)));
+    @include box-shadow(none);
+    border-color: $border-color;
+  }
+}
 
 
 

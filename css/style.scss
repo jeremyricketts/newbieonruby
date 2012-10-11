@@ -13,15 +13,20 @@ $fontSize: .8em;
 /* 	==========================================
 	STYLESHEETS TO IMPORT & COMPRESS
 	========================================== */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|IM+Fell+English);
+@import "compass";
 @import "_html5bp-main"; // Includes Normalize
-//@import "_mixins"; // Disable until I can get compass-friendly mixins going.
+@import "_mixins";
 @import "_media-queries";
 //@import "_1140";
 @import "_bootstrapGrid";
+@import "_animate-custom";
+@import "_syntax-dark";
+@import "_font-awesome";
 
 /* 	==========================================
-	MEDIA QUERIES
-	========================================== */ 
+	MEDIA QUERIES CHEAT SHEET
+	========================================== */
 /*
 mobile-only
 	mobile-portrait-only
@@ -70,6 +75,8 @@ $cooperlight: "Copperplate Light", "Copperplate Gothic Light", serif;
 $futura: Futura, "Century Gothic", AppleGothic, sans-serif;
 //Other
 $monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$IMfell: "IM Fell English","Droid Sans",Arial,"Helvetica Neue","Lucida Grande",sans-serif; ;
+
 /* 	==========================================
 	VARIABLES and MIXINS - OTHER
 	========================================== */
@@ -86,10 +93,10 @@ $monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
 	========================================== 
 	(Also see the bottom of _html5bp-main.scss
 	which includes .ir .hidden .visuallyhidden .invisible .clearfix */
-.highlight {
-	background: #EEF695;
-	background: rgba(234, 239, 175, 0.9);
-	padding: 0 3px;
+.hl {
+	// background: #EEF695;
+	// background: rgba(234, 239, 175, 0.9);
+	// padding: 0 3px;
 }
 .reset {margin:0; padding:0;}
 /* ----------- FORMS ------------ */
@@ -102,27 +109,27 @@ $monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
 .error a, .alert a { color:#8a1f11; }
 .notice a, .warning a { color:#514721; }
 .success a { color:#264409; }
-// FOR TESTING PURPOSES
-.bgRed {background:red;}
-.bgAqua {background:aqua;}
-.bgYellow {background:yellow;}
-.bgGreen {background:green;}
-.bgBlue {background:blue;}
-.bgOrange {background:orange;}
-body {
-	@include desktop-and-up {
-		border-top:4px solid green;
-	}
-	@include tablet-landscape-only {
-		border-top:4px solid orange;
-	}
-	@include tablet-portrait-only {
-		border-top:4px solid red;
-	}
-	@include mobile-only {
-		border-top: 4px solid blue;
-	}
+
+/* Fancy Ampersands */
+span.amp, em.amp {
+	font-family: Baskerville, Palatino, "Book Antiqua", serif;
+	font-style: italic;
 }
+
+// body {
+// 	@include desktop-and-up {
+// 		border-top:4px solid green;
+// 	}
+// 	@include tablet-landscape-only {
+// 		border-top:4px solid orange;
+// 	}
+// 	@include tablet-portrait-only {
+// 		border-top:4px solid red;
+// 	}
+// 	@include mobile-only {
+// 		border-top: 4px solid blue;
+// 	}
+// }
 // HIDE/SHOW FOR DIFFERENT SCREENS
 .showForMobile {
 	display:none;
@@ -143,25 +150,115 @@ body {
 a, a:visited { color: $linkColor; }
 a:hover { color: $linkColorHover;}
 body {
-	background: $baseColor;
+	background: $baseColor url(/img/noisy_grid.png) left top repeat;
 	color: $textColor;
 	//@extend .test;
-	font-family: $helvetica;
+	//font-family: $helvetica;
+	font-family: $droidsans;
 }
 // This is the only place where any styles are declared on .container. It's not part of the grid framework.
 .container {
 	//padding:0 20px;
+	//background:#fff url(/img/tiny_grid.png) left top repeat;
+	background:$baseColor;
+	margin:0 auto;
+	padding:0 30px;
 	@include desktop-and-up {
-		width:960px; // For desktop, we'll make the max 960.
-		margin:0 auto;
+		max-width:900px; // For desktop, we'll make the max 960.
 	}
 	@include tablet-landscape-and-down {
-		width:96%; // Let's leave a little padding for smaller screens. Using margin so our width computations don't get messed up.
-		margin:0 2%;
+		//width:96%; // Let's leave a little padding for smaller screens. Using margin so our width computations don't get messed up.
+		//margin:0 2%;
 	}
 }
-// BUTTONS - NOTE: ALL THIS NEEDS TO BE UPDATED TO SUPPORT COMPASS
-/*
+// Responsive images. And 2x images for retina.
+.row img {
+	max-width:100%; height: auto;
+}
+
+// Headings
+h1, h2, h3 {
+	font-weight:700;
+}
+// header
+header .container {
+	background:transparent;
+	max-width:960px;
+	padding:0;
+	ul {
+		padding:0;
+		text-align:right;
+		li {
+			display:inline-block;
+			list-style-type: none;
+			margin:0 10px;
+		}
+	}
+}
+#aboutBox {
+	overflow:hidden;
+	font-family:$IMfell; font-size:1.2em;
+	position:relative;
+	@extend .clearfix;
+	background:#4c4c4c;
+	color:darken($baseColor, 20%);
+	a {
+		color:#fff;
+	}
+	.iconrow {
+		text-align:center;
+		font-size:1.6em;
+		a {
+			text-decoration: none;
+			display:inline-block; margin:0 5px;
+			color:darken($baseColor, 50%);
+			@include text-shadow(0 1px 0 darken($baseColor, 80%));
+			&:hover {
+				color:$baseColor;
+			}
+		}
+	}
+	.closeAboutBox {
+		font-size:2em;
+		text-decoration: none;
+		position:absolute; bottom:0; right:15px;
+		color:$baseColor;
+		@include text-shadow(0 1px 0 darken($baseColor, 80%));
+		&:hover {
+			color:$baseColor;
+		}
+	}
+	@include transition-property(opacity, position);
+  	@include transition-duration(1s, 1s);
+  	@include transition-timing-function(ease-in, ease-in);
+  	top:-40px;
+  	height:0;
+	opacity:0;
+	&.open {
+		height:auto;
+		opacity:1;
+		padding-top:20px; padding-bottom:20px; // Height 0 still leaves padding, so we have to do it here.
+		top:0;
+	}
+}
+.mug {
+	text-align: center;
+	img {
+		@include border-radius(100px);
+	}
+	// @include mobile-only{
+	// 	text-align:center; margin:0 auto;
+	// }
+	
+}
+// Pre
+.highlight {
+	padding:20px 30px;
+	@include border-radius(10px);
+	//background:#fff url(/img/tiny_grid.png) left top repeat
+	border:1px solid $textColor;
+}
+// Sample single level buttons - Now compass friendly!
 a.btn, input.btn {
 	&.green {
 		@include btn(#60a3d8, light);
@@ -179,19 +276,36 @@ a.btn, input.btn {
 input.btn {
 	text-align:center;
 }
+#logo {
+	text-align:center;
+	letter-spacing: -1px;
+	background:transparent url(/img/ruby.png) center bottom no-repeat;
+	@include retina {
+		background:transparent url(/img/ruby_@2x.png) center bottom no-repeat;
+		background-size: 50% auto;
+	}
+	padding-bottom:1em;
+	em {
+		font-weight:200;
+		color:lighten($textColor, 30%);
+	}
+	span {
+		color:#800000;
+	}
+}
 // Sample Box
 .mixinBoxShadowExample {
 	display:inline-block;
 	color:darken($baseColor, 80%);
 	padding:1em 2em;
 	background: darken($baseColor, 50%);
-	border:1px solid #fff;
+	border:2px solid #fff;
 	@include border-radius(10px);
 	@include box-shadow(3px 3px 5px $lightGrey);
 }
-// Sample 2-row buttons
+// Sample 2-row buttons - Now compass friendly!
 a.multi-line-button {
-	@include multi-line-button();
+	@include multi-line-button($linkColor);
 	&.blue {
 		@include color-multi-line-button(#60a3d8);
 	}
@@ -205,12 +319,10 @@ a.multi-line-button {
 		@include color-multi-line-button(#d98026);
 	}
 }
-// Color the placeholder pink
+// Color the placeholder pink - Now compass friendly!
 input[type=text]{
 	@include input-placeholder(#ff0080);
 }
-  
-  */
 
 
 

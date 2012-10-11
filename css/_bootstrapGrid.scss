@@ -186,8 +186,8 @@
 // For mobile, let's make it so the rows clear each other and the span1-12 classes do the same. Also, no offsets.
 @include mobile-only {
   .row {
-    width:96%;
-    margin:0 2%; // A little padding is nice.
+    // width:96%;
+    // margin:0 2%; // A little padding is nice.
     .span1, .span2, .span3, .span4, .span5, .span7, .span6.mobileFullRow, .span8, .span9, .span10, .span11, .span12 {
       // We'll leave .span6 out of the mix, since 2 columns on a mobile screen is probably fine.
       // If you don't want that on some .span6 columns, add .mobileFullRow to it.

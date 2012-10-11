@@ -2,14 +2,17 @@
 // On Dom ready,
 $(function() {
 
-	//js here
+	$('#aboutLink, .closeAboutBox').click( function(){
+		$('#aboutBox').toggleClass('open');
+		return false;
+	});
 
 });
 
 
 // On page load.
-$(window).load(function () {
+// $(window).load(function () {
 
-	//js here
+// 	//js here
 
-});
+// });
