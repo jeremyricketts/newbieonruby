@@ -44,164 +44,44 @@
 				<p class="iconrow"><a href="http://twitter.com/jeremyricketts/" title="Twitter"><i class="icon-twitter"></i></a> <a href="https://github.com/jeremyricketts" title="Github"><i class="icon-github"></i></a> <a href="mailto:email@jeremyricketts.com" title="Email"><i class="icon-envelope"></i></a> <a href="http://jeremyricketts.com" title="My Personal Website"><i class="icon-globe"></i></a></p>
 			</div>
 			<div class="span8">
-				<p>Yup. That's me. Jeremy.</p>
-				<p>For years, I've been employed as a designer and front-end developer. I've done work for web startups as well as large ad agencies. As a freelancer, I've built a dozen small websites and worked on a few mobile applications.</p>
-				<p>I speak user interface and design. I use pencil and paper, Photoshop, HTML, CSS, and jQuery. I wield Expression Engine and a little PHP.</p>
-				<p>Time to dive a little deeper.</p>
-				<p>This blog chronicles my journey into Ruby, Rails and beyond. If you're learning Ruby like me, hopefully you'll find it a helpful resource.</p>
+				<h2>Ruby, Rails <span class="amp">&amp;</span> beyond.</h2>
+				<p class="hideForMobile">&larr;Yup. That's me. Jeremy.</p>
+				<p>For years, I've been employed as a designer and front-end developer. You might call me a "devigner". I'm about 20% pencil &amp; paper, 30% Photoshop, and 50% HTML/CSS/JS.</p>
+				<p>Like many devigners, I've always wanted to get into programming. Although I've dabbled in PHP (and completed some fairly complex projects using <a href="http://expressionengine.com" title="Expression Engine">Expression Engine</a>) I'd really like to do some "real" programming.</p>
+				<p>Let's make some magic happen.</p>
 			</div>
 			<a class="closeAboutBox" href="#" title="Close"><i class="icon-remove-sign"></i></a>
 		</div>
 	</div>
 
-	<header>
-		<div class="container">
-			<ul>
-				<li><a id="aboutLink" href="#" title="about">about</a></li>
-				<li><a href="#" title="resources">resources</a></li>
-			</ul>
-		</div>
+	<header class="container">
+		<ul>
+			<li><a id="aboutLink" href="#" title="about">about</a></li>
+			<li><a href="#" title="resources">resources</a></li>
+		</ul>
 	</header>
 	
-	<div class="container" role="main"><!-- Can also be named container960max. See style.scss for sample styling. -->
+	<div class="container main" role="main"><!-- Can also be named container960max. See style.scss for sample styling. -->
 
 		<div class="row">
 			<div class="span12">
 				<h1 id="logo">newbie<em class="amp">on</em><span>ruby</span></h1>
-				{{ content }}
-				<h2>MORE:</h2>
-				<p>As designers, every decision we make is informed by what we see and hear. The things we experience. Our inspiration. Our passion. For me, that passion is film. The thing that fascinates me most about film is how thousands of pieces make up the larger storytelling puzzle. From the dialogue and its subtext to the way a scene is lit to the actor's performance- they all contribute to furthering a story.</p>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="span6"><!-- Can add .mobileFullRow to .span6. Otherwise, we allow 2 columns on mobile. -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-			</div>
-			<div class="span6"><!-- Can add .mobileFullRow to .span6. Otherwise, we allow 2 columns on mobile. -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="span12">
-{% highlight ruby %}
-# Public: Duplicate some text an abitrary number of times.
-#
-# text  - The String to be duplicated.
-# count - The Integer number of times to duplicate the text.
-#
-# Examples
-#
-#   multiplex('Tom', 4)
-#   # => 'TomTomTomTom'
-#
-# Returns the duplicated String.
-def multiplex(text, count)
-  text * count
-end
-{% endhighlight %}
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="span12">
-{% highlight html %}
-<div class="row">
-	<div class="span8">
-		<p>xxxxxxLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-	</div>
-	<div class="span3 offset1">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
-</div>
-{% endhighlight %}
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="span8">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-			</div>
-			<div class="span3 offset1">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			</div>
-		</div>
-
-		<div class="row">
-
-			<div class="span12">
-	
-				<p>Okay, so no one is going to throw a red carpet premiere for your <a href="#" title="Dummy Link">www.acmeinsuranceonline.biz</a> project launch. And your client may not understand why you debated over Helvetica or Verdana for half an hour. <strong>These little behind-the-scenes battles are what turn average websites into masterpieces.</strong> When everyone else is content to say "The End," keep bringing it all into focus. <em>Be a storyteller</em>. Let your point of view shine through, and everything you create will have a depth that is sorely missing on the web.</p>
-
-				<p>
-					<a href="#" class="btn green">click href</a>
-					<a href="#" class="btn red">click href</a>
-					<a href="#" class="btn orange">click href</a>
-					<a href="#" class="btn yellow">click href</a>
-				</p>
-
-				<p>
-					<input type="button" class="btn green" value="click button">
-					<input type="button" class="btn red" value="click button">
-					<input type="button" class="btn orange" value="click button">
-					<input type="button" class="btn yellow" value="click button">
-				</p>
-
-				<p>
-					<input type="submit" class="btn green" value="click submit">
-					<input type="submit" class="btn red" value="click submit">
-					<input type="submit" class="btn orange" value="click submit">
-					<input type="submit" class="btn yellow" value="click submit">
-				</p>
-
-				<div class="mixinBoxShadowExample">
-					<p>This is a shadow box.</p>
-				</div>
-
-				<p>The buttons below look amazing on Firefox and Safari and decent on Internet Explorer 6-8.</p>
-				<p>
-					<a class="multi-line-button blue" href="#" style="width:14em">
-						<span class="title">Start Free Trial</span>
-						<span class="subtitle">30-days free! Signup in 60 seconds</span>
-					</a>
-				</p>
-				<p>
-					<a class="multi-line-button green" href="#" style="width:14em">
-						<span class="title">Start Free Trial</span>
-						<span class="subtitle">30-days free! Signup in 60 seconds</span>
-					</a>
-				</p>
-				<p>
-				<a class="multi-line-button red" href="#" style="width:14em">
-					<span class="title">Start Free Trial</span>
-					<span class="subtitle">30-days free! Signup in 60 seconds</span>
-				</a>
-				</p>
-				<p>
-					<a class="multi-line-button orange" href="#" style="width:14em">
-						<span class="title">Start Free Trial</span>
-						<span class="subtitle">30-days free! Signup in 60 seconds</span>
-					</a>
-				</p>
-
-				<p>Placeholder color mixin sample: <input type="text" placeholder="Hey Look I'm pink"></p>
-		
-  			</div>
-
-		</div>
-
-		<footer><!-- Multiple containers can be added. They are just here to control width. -->
-
-			<div class="row">
-				<div class="span12">
-					<p>This is the footer.</p>
-				</div>
-			</div>
-
-		</footer>
+		{{ content }}
 
 	</div><!-- /.container -->
+
+	<footer class="container"><!-- Multiple containers can be added. They are just here to control width. -->
+
+		<div class="row">
+			<div class="span12">
+				<p>Steal anything from this site you want. Just link back. Or not. Whatev man.</p>
+			</div>
+		</div>
+
+	</footer>
 
 
 	<!-- JavaScript at the bottom for fast page loading -->

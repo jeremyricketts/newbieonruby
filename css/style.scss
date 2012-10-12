@@ -7,13 +7,14 @@ $lightGrey: #818181;
 $linkColor: #356c97;
 $linkColorHover: #285376;
 // BASE COLORS AND VARIABLES
-$baseColor: #f6f6f6;
-$textColor: darken($baseColor, 60%);
+$baseColor: #ffffff;
+$textColor: darken($baseColor, 70%);
+$rubyColor: #800000;
 $fontSize: .8em;
 /* 	==========================================
 	STYLESHEETS TO IMPORT & COMPRESS
 	========================================== */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|IM+Fell+English);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import "compass";
 @import "_html5bp-main"; // Includes Normalize
 @import "_mixins";
@@ -109,11 +110,13 @@ $IMfell: "IM Fell English","Droid Sans",Arial,"Helvetica Neue","Lucida Grande",s
 .error a, .alert a { color:#8a1f11; }
 .notice a, .warning a { color:#514721; }
 .success a { color:#264409; }
+.soft { color: lighten($textColor, 30%);}
 
 /* Fancy Ampersands */
 span.amp, em.amp {
-	font-family: Baskerville, Palatino, "Book Antiqua", serif;
+	font-family: Baskerville, Palatino, "Book Antiqua", serif !important;
 	font-style: italic;
+	font-weight: normal;
 }
 
 // body {
@@ -134,11 +137,10 @@ span.amp, em.amp {
 .showForMobile {
 	display:none;
 	@include mobile-only {
-			display:block;
+			display:inline-block;
 		}
 }
 .hideForMobile {
-	display:block;
 	@include mobile-only {
 			display:none;
 		}
@@ -150,7 +152,7 @@ span.amp, em.amp {
 a, a:visited { color: $linkColor; }
 a:hover { color: $linkColorHover;}
 body {
-	background: $baseColor url(/img/noisy_grid.png) left top repeat;
+	background: #777777 url(/img/argyle-light.png) left top repeat;
 	color: $textColor;
 	//@extend .test;
 	//font-family: $helvetica;
@@ -163,6 +165,7 @@ body {
 	background:$baseColor;
 	margin:0 auto;
 	padding:0 30px;
+	@extend .clearfix;
 	@include desktop-and-up {
 		max-width:900px; // For desktop, we'll make the max 960.
 	}
@@ -171,7 +174,10 @@ body {
 		//margin:0 2%;
 	}
 }
-// Responsive images. And 2x images for retina.
+.container.main {
+	padding-bottom:40px;
+}
+// Responsive images.
 .row img {
 	max-width:100%; height: auto;
 }
@@ -181,7 +187,7 @@ h1, h2, h3 {
 	font-weight:700;
 }
 // header
-header .container {
+header.container {
 	background:transparent;
 	max-width:960px;
 	padding:0;
@@ -195,27 +201,59 @@ header .container {
 		}
 	}
 }
+// footer
+footer.container {
+	background:transparent;
+	max-width:960px;
+	padding:0 0 60px 0;
+	text-align:center;
+	font-size:.9em;
+}
+header, footer {
+	color:lighten($textColor, 70%);
+	@include text-shadow(0 1px 0 $textColor);
+	a {
+		color:#fff;
+		font-weight:700;
+		text-decoration:none;
+		@include transition-property(color);
+  		@include transition-duration(.2s);
+  		&:visited {
+  			color:#fff;
+  		}
+		&:hover {
+			color:$rubyColor;
+		}
+	}
+}
 #aboutBox {
 	overflow:hidden;
-	font-family:$IMfell; font-size:1.2em;
+	//font-family:$IMfell; font-size:1.2em;
 	position:relative;
 	@extend .clearfix;
-	background:#4c4c4c;
-	color:darken($baseColor, 20%);
+	background:$rubyColor;
+	color:lighten($textColor, 100%);
 	a {
 		color:#fff;
 	}
 	.iconrow {
 		text-align:center;
-		font-size:1.6em;
+		font-size:1.7em;
 		a {
 			text-decoration: none;
 			display:inline-block; margin:0 5px;
-			color:darken($baseColor, 50%);
-			@include text-shadow(0 1px 0 darken($baseColor, 80%));
+			@include tablet-portrait-only {
+				margin:0;
+			}
+			//color:darken($baseColor, 50%);
+			color:darken($rubyColor, 20%);
+			@include text-shadow(0 1px 0 lighten($rubyColor, 10%));
 			&:hover {
 				color:$baseColor;
 			}
+		}
+		@include mobile-only {
+			margin-bottom:0;
 		}
 	}
 	.closeAboutBox {
@@ -244,20 +282,69 @@ header .container {
 .mug {
 	text-align: center;
 	img {
-		@include border-radius(100px);
+		@include border-radius(50%);
+		@include mobile-only {
+			max-width:50%;
+		}
 	}
-	// @include mobile-only{
-	// 	text-align:center; margin:0 auto;
-	// }
 	
 }
 // Pre
 .highlight {
-	padding:20px 30px;
+	padding:10px 20px;
 	@include border-radius(10px);
 	//background:#fff url(/img/tiny_grid.png) left top repeat
 	border:1px solid $textColor;
+	font-size:.9em; line-height:1.1em;
 }
+// Callout
+.callout {
+	padding:15px 30px;
+	font-family:$georgia;
+	font-style: italic;
+	background:darken($baseColor, 2%);
+	border-top:1px solid darken($baseColor, 12%);
+	border-bottom:1px solid darken($baseColor, 12%);
+}
+// Post Lists
+.posts {
+	margin-bottom:3em;
+	li {
+		margin-bottom:.5em;
+	}
+}
+// sidebar
+.sidebar {
+	background:darken($baseColor, 2%);
+	border-top:1px solid darken($baseColor, 12%);
+	border-bottom:1px solid darken($baseColor, 12%);
+	//margin:10px 0;
+	padding:0 20px;
+	// font-family:$georgia;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Sample single level buttons - Now compass friendly!
 a.btn, input.btn {
 	&.green {
@@ -290,7 +377,7 @@ input.btn {
 		color:lighten($textColor, 30%);
 	}
 	span {
-		color:#800000;
+		color:$rubyColor;
 	}
 }
 // Sample Box

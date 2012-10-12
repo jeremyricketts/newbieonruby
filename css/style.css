@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|IM+Fell+English);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 /* 	==========================================
 	BASIC VARIABLES
 	========================================== */
@@ -75,14 +75,14 @@ body {
  */
 /* line 45, _html5bp-main.scss */
 ::-moz-selection {
-  background: #fe57a1;
+  background: #dfa0a0;
   color: #fff;
   text-shadow: none;
 }
 
 /* line 46, _html5bp-main.scss */
 ::selection {
-  background: #fe57a1;
+  background: #dfa0a0;
   color: #fff;
   text-shadow: none;
 }
@@ -462,18 +462,18 @@ td {
 
 /* Contain floats: h5bp.com/q */
 /* line 238, _html5bp-main.scss */
-.clearfix:before, .row:before, #aboutBox:before, .clearfix:after, .row:after, #aboutBox:after {
+.clearfix:before, .row:before, .container:before, #aboutBox:before, .clearfix:after, .row:after, .container:after, #aboutBox:after {
   content: "";
   display: table;
 }
 
 /* line 239, _html5bp-main.scss */
-.clearfix:after, .row:after, #aboutBox:after {
+.clearfix:after, .row:after, .container:after, #aboutBox:after {
   clear: both;
 }
 
 /* line 240, _html5bp-main.scss */
-.clearfix, .row, #aboutBox {
+.clearfix, .row, .container, #aboutBox {
   *zoom: 1;
 }
 
@@ -6955,32 +6955,32 @@ retina
 /* 	==========================================
 	VARIABLES and MIXINS - OTHER
 	========================================== */
-/* line 84, style.scss */
+/* line 85, style.scss */
 .bgRed {
   background: red;
 }
 
-/* line 85, style.scss */
+/* line 86, style.scss */
 .bgAqua {
   background: aqua;
 }
 
-/* line 86, style.scss */
+/* line 87, style.scss */
 .bgYellow {
   background: yellow;
 }
 
-/* line 87, style.scss */
+/* line 88, style.scss */
 .bgGreen {
   background: green;
 }
 
-/* line 88, style.scss */
+/* line 89, style.scss */
 .bgBlue {
   background: blue;
 }
 
-/* line 89, style.scss */
+/* line 90, style.scss */
 .bgOrange {
   background: orange;
 }
@@ -6990,80 +6990,82 @@ retina
 	========================================== 
 	(Also see the bottom of _html5bp-main.scss
 	which includes .ir .hidden .visuallyhidden .invisible .clearfix */
-/* line 101, style.scss */
+/* line 102, style.scss */
 .reset {
   margin: 0;
   padding: 0;
 }
 
 /* ----------- FORMS ------------ */
-/* line 103, style.scss */
+/* line 104, style.scss */
 .error, .notice, .success, .warning {
   padding: .8em;
   margin-bottom: 1em;
   border: 2px solid #ddd;
 }
 
-/* line 106, style.scss */
+/* line 107, style.scss */
 .error, .alert {
   background: #FBE3E4;
   color: #8a1f11;
   border-color: #FBC2C4;
 }
 
-/* line 107, style.scss */
+/* line 108, style.scss */
 .notice, .warning {
   background: #FFF6BF;
   color: #514721;
   border-color: #FFD324;
 }
 
-/* line 108, style.scss */
+/* line 109, style.scss */
 .success {
   background: #E6EFC2;
   color: #264409;
   border-color: #C6D880;
 }
 
-/* line 109, style.scss */
+/* line 110, style.scss */
 .error a, .alert a {
   color: #8a1f11;
 }
 
-/* line 110, style.scss */
+/* line 111, style.scss */
 .notice a, .warning a {
   color: #514721;
 }
 
-/* line 111, style.scss */
+/* line 112, style.scss */
 .success a {
   color: #264409;
 }
 
-/* Fancy Ampersands */
-/* line 114, style.scss */
-span.amp, em.amp {
-  font-family: Baskerville, Palatino, "Book Antiqua", serif;
-  font-style: italic;
+/* line 113, style.scss */
+.soft {
+  color: #999999;
 }
 
-/* line 134, style.scss */
+/* Fancy Ampersands */
+/* line 116, style.scss */
+span.amp, em.amp {
+  font-family: Baskerville, Palatino, "Book Antiqua", serif !important;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* line 137, style.scss */
 .showForMobile {
   display: none;
 }
 @media (max-width: 480px) {
-  /* line 134, style.scss */
+  /* line 137, style.scss */
   .showForMobile {
-    display: block;
+    display: inline-block;
   }
 }
 
-/* line 140, style.scss */
-.hideForMobile {
-  display: block;
-}
 @media (max-width: 480px) {
-  /* line 140, style.scss */
+  /* line 143, style.scss */
   .hideForMobile {
     display: none;
   }
@@ -7072,73 +7074,113 @@ span.amp, em.amp {
 /* 	==========================================
 	MAIN STYLES
 	========================================== */
-/* line 150, style.scss */
+/* line 152, style.scss */
 a, a:visited {
   color: #356c97;
 }
 
-/* line 151, style.scss */
+/* line 153, style.scss */
 a:hover {
   color: #285376;
 }
 
-/* line 152, style.scss */
+/* line 154, style.scss */
 body {
-  background: #f6f6f6 url(/img/noisy_grid.png) left top repeat;
-  color: #5d5d5d;
+  background: #777777 url(/img/argyle-light.png) left top repeat;
+  color: #4d4d4d;
   font-family: "Droid Sans", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 
-/* line 160, style.scss */
+/* line 162, style.scss */
 .container {
-  background: #f6f6f6;
+  background: white;
   margin: 0 auto;
   padding: 0 30px;
 }
 @media only screen and (min-width: 1025px) {
-  /* line 160, style.scss */
+  /* line 162, style.scss */
   .container {
     max-width: 900px;
   }
 }
 
-/* line 175, style.scss */
+/* line 177, style.scss */
+.container.main {
+  padding-bottom: 40px;
+}
+
+/* line 181, style.scss */
 .row img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 180, style.scss */
+/* line 186, style.scss */
 h1, h2, h3 {
   font-weight: 700;
 }
 
-/* line 184, style.scss */
-header .container {
+/* line 190, style.scss */
+header.container {
   background: transparent;
   max-width: 960px;
   padding: 0;
 }
-/* line 188, style.scss */
-header .container ul {
+/* line 194, style.scss */
+header.container ul {
   padding: 0;
   text-align: right;
 }
-/* line 191, style.scss */
-header .container ul li {
+/* line 197, style.scss */
+header.container ul li {
   display: inline-block;
   list-style-type: none;
   margin: 0 10px;
 }
 
-/* line 198, style.scss */
+/* line 205, style.scss */
+footer.container {
+  background: transparent;
+  max-width: 960px;
+  padding: 0 0 60px 0;
+  text-align: center;
+  font-size: .9em;
+}
+
+/* line 212, style.scss */
+header, footer {
+  color: white;
+  text-shadow: 0 1px 0 #4d4d4d;
+}
+/* line 215, style.scss */
+header a, footer a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 221, style.scss */
+header a:visited, footer a:visited {
+  color: #fff;
+}
+/* line 224, style.scss */
+header a:hover, footer a:hover {
+  color: maroon;
+}
+
+/* line 229, style.scss */
 #aboutBox {
   overflow: hidden;
-  font-family: "IM Fell English", "Droid Sans", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
-  font-size: 1.2em;
   position: relative;
-  background: #4c4c4c;
-  color: #c3c3c3;
+  background: maroon;
+  color: white;
   -webkit-transition-property: opacity, position;
   -moz-transition-property: opacity, position;
   -o-transition-property: opacity, position;
@@ -7155,42 +7197,54 @@ header .container ul li {
   height: 0;
   opacity: 0;
 }
-/* line 205, style.scss */
+/* line 236, style.scss */
 #aboutBox a {
   color: #fff;
 }
-/* line 208, style.scss */
+/* line 239, style.scss */
 #aboutBox .iconrow {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.7em;
 }
-/* line 211, style.scss */
+/* line 242, style.scss */
 #aboutBox .iconrow a {
   text-decoration: none;
   display: inline-block;
   margin: 0 5px;
-  color: #767676;
-  text-shadow: 0 1px 0 #2a2a2a;
+  color: #1a0000;
+  text-shadow: 0 1px 0 #b30000;
 }
-/* line 216, style.scss */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* line 242, style.scss */
+  #aboutBox .iconrow a {
+    margin: 0;
+  }
+}
+/* line 251, style.scss */
 #aboutBox .iconrow a:hover {
-  color: #f6f6f6;
+  color: white;
 }
-/* line 221, style.scss */
+@media (max-width: 480px) {
+  /* line 239, style.scss */
+  #aboutBox .iconrow {
+    margin-bottom: 0;
+  }
+}
+/* line 259, style.scss */
 #aboutBox .closeAboutBox {
   font-size: 2em;
   text-decoration: none;
   position: absolute;
   bottom: 0;
   right: 15px;
-  color: #f6f6f6;
-  text-shadow: 0 1px 0 #2a2a2a;
+  color: white;
+  text-shadow: 0 1px 0 #333333;
 }
-/* line 227, style.scss */
+/* line 265, style.scss */
 #aboutBox .closeAboutBox:hover {
-  color: #f6f6f6;
+  color: white;
 }
-/* line 237, style.scss */
+/* line 275, style.scss */
 #aboutBox.open {
   height: auto;
   opacity: 1;
@@ -7199,33 +7253,68 @@ header .container ul li {
   top: 0;
 }
 
-/* line 244, style.scss */
+/* line 282, style.scss */
 .mug {
   text-align: center;
 }
-/* line 246, style.scss */
+/* line 284, style.scss */
 .mug img {
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+@media (max-width: 480px) {
+  /* line 284, style.scss */
+  .mug img {
+    max-width: 50%;
+  }
+}
 
-/* line 255, style.scss */
+/* line 293, style.scss */
 .highlight {
-  padding: 20px 30px;
+  padding: 10px 20px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border: 1px solid #5d5d5d;
+  border: 1px solid #4d4d4d;
+  font-size: .9em;
+  line-height: 1.1em;
 }
 
-/* line 263, style.scss */
+/* line 301, style.scss */
+.callout {
+  padding: 15px 30px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  background: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* line 310, style.scss */
+.posts {
+  margin-bottom: 3em;
+}
+/* line 312, style.scss */
+.posts li {
+  margin-bottom: .5em;
+}
+
+/* line 317, style.scss */
+.sidebar {
+  background: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 20px;
+}
+
+/* line 350, style.scss */
 a.btn.green, input.btn.green {
   color: white;
   text-shadow: 0 1px 0 #0b1f2e;
@@ -7272,7 +7361,7 @@ a.btn.green:active, input.btn.green:active {
   background-image: -o-linear-gradient(top center, #3186c9, #60a3d8);
   background-image: linear-gradient(top center, #3186c9, #60a3d8);
 }
-/* line 266, style.scss */
+/* line 353, style.scss */
 a.btn.red, input.btn.red {
   color: white;
   text-shadow: 0 1px 0 black;
@@ -7319,7 +7408,7 @@ a.btn.red:active, input.btn.red:active {
   background-image: -o-linear-gradient(top center, #913131, #bf4040);
   background-image: linear-gradient(top center, #913131, #bf4040);
 }
-/* line 269, style.scss */
+/* line 356, style.scss */
 a.btn.yellow, input.btn.yellow {
   color: #373709;
   text-shadow: 0 1px 0 #eaeb87;
@@ -7366,7 +7455,7 @@ a.btn.yellow:active, input.btn.yellow:active {
   background-image: -o-linear-gradient(top center, #b9ba1f, #e3e45b);
   background-image: linear-gradient(top center, #b9ba1f, #e3e45b);
 }
-/* line 272, style.scss */
+/* line 359, style.scss */
 a.btn.orange, input.btn.orange {
   color: white;
   text-shadow: 0 1px 0 black;
@@ -7414,12 +7503,12 @@ a.btn.orange:active, input.btn.orange:active {
   background-image: linear-gradient(top center, #a5611d, #d98026);
 }
 
-/* line 276, style.scss */
+/* line 363, style.scss */
 input.btn {
   text-align: center;
 }
 
-/* line 279, style.scss */
+/* line 366, style.scss */
 #logo {
   text-align: center;
   letter-spacing: -1px;
@@ -7427,28 +7516,28 @@ input.btn {
   padding-bottom: 1em;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* line 279, style.scss */
+  /* line 366, style.scss */
   #logo {
     background: transparent url(/img/ruby_@2x.png) center bottom no-repeat;
     background-size: 50% auto;
   }
 }
-/* line 288, style.scss */
+/* line 375, style.scss */
 #logo em {
   font-weight: 200;
-  color: #aaaaaa;
+  color: #999999;
 }
-/* line 292, style.scss */
+/* line 379, style.scss */
 #logo span {
-  color: #800000;
+  color: maroon;
 }
 
-/* line 297, style.scss */
+/* line 384, style.scss */
 .mixinBoxShadowExample {
   display: inline-block;
-  color: #2a2a2a;
+  color: #333333;
   padding: 1em 2em;
-  background: #767676;
+  background: gray;
   border: 2px solid #fff;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -7461,7 +7550,7 @@ input.btn {
   box-shadow: 3px 3px 5px #818181;
 }
 
-/* line 307, style.scss */
+/* line 394, style.scss */
 a.multi-line-button {
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
@@ -7545,7 +7634,7 @@ a.multi-line-button:active, a.multi-line-button.depressed {
   box-shadow: none;
   border-color: #1b364c;
 }
-/* line 309, style.scss */
+/* line 396, style.scss */
 a.multi-line-button.blue {
   background-color: #60a3d8;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #89bbe2), color-stop(100%, #378bce));
@@ -7582,7 +7671,7 @@ a.multi-line-button.blue:active, a.multi-line-button.blue.depressed {
   box-shadow: none;
   border-color: #2970a9;
 }
-/* line 312, style.scss */
+/* line 399, style.scss */
 a.multi-line-button.green {
   background-color: #63bb4a;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #83c96f), color-stop(100%, #4e9939));
@@ -7619,7 +7708,7 @@ a.multi-line-button.green:active, a.multi-line-button.green.depressed {
   box-shadow: none;
   border-color: #3b742b;
 }
-/* line 315, style.scss */
+/* line 402, style.scss */
 a.multi-line-button.red {
   background-color: #bf4040;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc6666), color-stop(100%, #993333));
@@ -7656,7 +7745,7 @@ a.multi-line-button.red:active, a.multi-line-button.red.depressed {
   box-shadow: none;
   border-color: #732626;
 }
-/* line 318, style.scss */
+/* line 405, style.scss */
 a.multi-line-button.orange {
   background-color: #d98026;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e19951), color-stop(100%, #ae661e));
