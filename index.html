@@ -12,7 +12,6 @@ title: newbieonruby.com
 
 <div class="row">
 	<div class="span8">
-		
 		<h2 class="reset">Decisions Decisions</h2>
 		<p class="reset soft hidden">Why Ruby? Why Rails? How to learn?</p>
 
@@ -25,43 +24,71 @@ title: newbieonruby.com
 
 		<ul class="posts">
 			{% for post in site.categories.decisions %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft"> &raquo; {{ post.date | date_to_string }}</small><br>
+			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft hideForMobile"> &raquo; {{ post.date | date_to_string }}</small><br>
 				{{ post.excerpt }}</li>
 			{% endfor %}
 		</ul>
+	</div>
+	<div class="span4">
+		<ul class="resources">
+			<li><a href="#" title="Some Link">Some Link</a></li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+		</ul>
+	</div>
+</div>
 
+<div class="row">
+	<div class="span8">
 		<h2>Installing Things</h2>
 
 		<ul class="posts">
 			{% for post in site.categories.installing %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft"> &raquo; {{ post.date | date_to_string }}</small><br>
+			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft hideForMobile"> &raquo; {{ post.date | date_to_string }}</small><br>
 				{{ post.excerpt }}</li>
 			{% endfor %}
 		</ul>
+	</div>
+	<div class="span4">
+		<ul class="resources">
+			<li><a href="#" title="Some Link">Some Link</a></li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+		</ul>
+	</div>
+</div>
 
+<div class="row">
+	<div class="span8">
 		<h2>Learning <span class="amp">&amp;</span> Tutorials</h2>
 
 		<ul class="posts">
 			{% for post in site.categories.learning %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft"> &raquo; {{ post.date | date_to_string }}</small><br>
+			<li><a href="{{ post.url }}">{{ post.title }}</a> <small class="soft hideForMobile"> &raquo; {{ post.date | date_to_string }}</small><br>
 				{{ post.excerpt }}</li>
 			{% endfor %}
 		</ul>
+	</div>
+	<div class="span4">
+		<ul class="resources">
+			<li>Resources:</li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+			<li><a href="#" title="Some Link">Some Link</a></li>
+		</ul>
+	</div>
+</div>
 
+<div class="row">
+	<div class="span8">
 		<h2>First Application: sailwithchris.com</h2>
 
 		<p class="soft">Up next.</p>
-
 	</div>
 	<div class="span4">
-		
-		<div class="sidebar">
-			<h4>Some Title</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-			<h4>Some Title</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.</p>
-		</div>
-
+		<ul class="resources">
+			<li>sdfsdfsd</li>
+			<li>sdfsdfsd</li>
+		</ul>
 	</div>
 </div>
 

@@ -7299,14 +7299,20 @@ header a:hover, footer a:hover {
 
 /* line 310, style.scss */
 .posts {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
-/* line 312, style.scss */
+@media (max-width: 480px) {
+  /* line 310, style.scss */
+  .posts {
+    margin-bottom: 0;
+  }
+}
+/* line 315, style.scss */
 .posts li {
   margin-bottom: .5em;
 }
 
-/* line 317, style.scss */
+/* line 320, style.scss */
 .sidebar {
   background: #fafafa;
   border-top: 1px solid #e0e0e0;
@@ -7314,7 +7320,28 @@ header a:hover, footer a:hover {
   padding: 0 20px;
 }
 
-/* line 350, style.scss */
+/* line 329, style.scss */
+.resources {
+  background: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 50px;
+  padding: 5px 10px;
+  font-size: .8em;
+}
+/* line 336, style.scss */
+.resources li {
+  list-style-type: none;
+}
+@media (max-width: 480px) {
+  /* line 329, style.scss */
+  .resources {
+    margin-bottom: 3em;
+    margin-top: 0;
+  }
+}
+
+/* line 369, style.scss */
 a.btn.green, input.btn.green {
   color: white;
   text-shadow: 0 1px 0 #0b1f2e;
@@ -7361,7 +7388,7 @@ a.btn.green:active, input.btn.green:active {
   background-image: -o-linear-gradient(top center, #3186c9, #60a3d8);
   background-image: linear-gradient(top center, #3186c9, #60a3d8);
 }
-/* line 353, style.scss */
+/* line 372, style.scss */
 a.btn.red, input.btn.red {
   color: white;
   text-shadow: 0 1px 0 black;
@@ -7408,7 +7435,7 @@ a.btn.red:active, input.btn.red:active {
   background-image: -o-linear-gradient(top center, #913131, #bf4040);
   background-image: linear-gradient(top center, #913131, #bf4040);
 }
-/* line 356, style.scss */
+/* line 375, style.scss */
 a.btn.yellow, input.btn.yellow {
   color: #373709;
   text-shadow: 0 1px 0 #eaeb87;
@@ -7455,7 +7482,7 @@ a.btn.yellow:active, input.btn.yellow:active {
   background-image: -o-linear-gradient(top center, #b9ba1f, #e3e45b);
   background-image: linear-gradient(top center, #b9ba1f, #e3e45b);
 }
-/* line 359, style.scss */
+/* line 378, style.scss */
 a.btn.orange, input.btn.orange {
   color: white;
   text-shadow: 0 1px 0 black;
@@ -7503,12 +7530,12 @@ a.btn.orange:active, input.btn.orange:active {
   background-image: linear-gradient(top center, #a5611d, #d98026);
 }
 
-/* line 363, style.scss */
+/* line 382, style.scss */
 input.btn {
   text-align: center;
 }
 
-/* line 366, style.scss */
+/* line 385, style.scss */
 #logo {
   text-align: center;
   letter-spacing: -1px;
@@ -7516,23 +7543,23 @@ input.btn {
   padding-bottom: 1em;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* line 366, style.scss */
+  /* line 385, style.scss */
   #logo {
     background: transparent url(/img/ruby_@2x.png) center bottom no-repeat;
     background-size: 50% auto;
   }
 }
-/* line 375, style.scss */
+/* line 394, style.scss */
 #logo em {
   font-weight: 200;
   color: #999999;
 }
-/* line 379, style.scss */
+/* line 398, style.scss */
 #logo span {
   color: maroon;
 }
 
-/* line 384, style.scss */
+/* line 403, style.scss */
 .mixinBoxShadowExample {
   display: inline-block;
   color: #333333;
@@ -7550,7 +7577,7 @@ input.btn {
   box-shadow: 3px 3px 5px #818181;
 }
 
-/* line 394, style.scss */
+/* line 413, style.scss */
 a.multi-line-button {
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
@@ -7634,7 +7661,7 @@ a.multi-line-button:active, a.multi-line-button.depressed {
   box-shadow: none;
   border-color: #1b364c;
 }
-/* line 396, style.scss */
+/* line 415, style.scss */
 a.multi-line-button.blue {
   background-color: #60a3d8;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #89bbe2), color-stop(100%, #378bce));
@@ -7671,7 +7698,7 @@ a.multi-line-button.blue:active, a.multi-line-button.blue.depressed {
   box-shadow: none;
   border-color: #2970a9;
 }
-/* line 399, style.scss */
+/* line 418, style.scss */
 a.multi-line-button.green {
   background-color: #63bb4a;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #83c96f), color-stop(100%, #4e9939));
@@ -7708,7 +7735,7 @@ a.multi-line-button.green:active, a.multi-line-button.green.depressed {
   box-shadow: none;
   border-color: #3b742b;
 }
-/* line 402, style.scss */
+/* line 421, style.scss */
 a.multi-line-button.red {
   background-color: #bf4040;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc6666), color-stop(100%, #993333));
@@ -7745,7 +7772,7 @@ a.multi-line-button.red:active, a.multi-line-button.red.depressed {
   box-shadow: none;
   border-color: #732626;
 }
-/* line 405, style.scss */
+/* line 424, style.scss */
 a.multi-line-button.orange {
   background-color: #d98026;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e19951), color-stop(100%, #ae661e));

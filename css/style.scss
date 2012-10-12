@@ -308,7 +308,10 @@ header, footer {
 }
 // Post Lists
 .posts {
-	margin-bottom:3em;
+	margin-bottom:2em;
+	@include mobile-only {
+		margin-bottom:0;
+	}
 	li {
 		margin-bottom:.5em;
 	}
@@ -321,6 +324,22 @@ header, footer {
 	//margin:10px 0;
 	padding:0 20px;
 	// font-family:$georgia;
+}
+// resources resources list
+.resources {
+	background:darken($baseColor, 2%);
+	border-top:1px solid darken($baseColor, 12%);
+	border-bottom:1px solid darken($baseColor, 12%);
+	margin-top:50px;
+	padding:5px 10px;
+	font-size:.8em;
+	li {
+		list-style-type:none;
+	}
+	@include mobile-only {
+		margin-bottom:3em;
+		margin-top:0;
+	}
 }
 
 
