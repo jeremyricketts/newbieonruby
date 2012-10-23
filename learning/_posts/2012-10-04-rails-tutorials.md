@@ -6,10 +6,38 @@ excerpt: There's some great resources for learning ruby and rails. Here's what I
 ---
 
 # {{ page.title }}
+<p class="meta">October 4th, 2012</p>
 
-<p class="meta">4 Oct 2012 - Carlsbad CA</p>
+## This is an H2 using markdown.
 
-## H2 here.
+A link [link](http://jeremyricketts.com/). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
 
-Here it is. A link [link](http://jeremyricketts.com/)
+* This
+* Is a
+* List
+
+### This is an H3
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
+
+### Here is some code
+
+{% highlight ruby %}
+# Public: Duplicate some text an abitrary number of times.
+#
+# text  - The String to be duplicated.
+# count - The Integer number of times to duplicate the text.
+#
+# Examples
+#
+#   multiplex('Tom', 4)
+#   # => 'TomTomTomTom'
+#
+# Returns the duplicated String.
+def multiplex(text, count)
+  text * count
+end
+{% endhighlight %}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
 

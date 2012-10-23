@@ -7,19 +7,18 @@ $lightGrey: #818181;
 $linkColor: #356c97;
 $linkColorHover: #285376;
 // BASE COLORS AND VARIABLES
-$baseColor: #ffffff;
+$baseColor: #F0F0ED;
 $textColor: darken($baseColor, 70%);
 $rubyColor: #800000;
 $fontSize: .8em;
 /* 	==========================================
 	STYLESHEETS TO IMPORT & COMPRESS
 	========================================== */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import "compass";
 @import "_html5bp-main"; // Includes Normalize
 @import "_mixins";
 @import "_media-queries";
-//@import "_1140";
 @import "_bootstrapGrid";
 @import "_animate-custom";
 @import "_syntax-dark";
@@ -100,6 +99,7 @@ $IMfell: "IM Fell English","Droid Sans",Arial,"Helvetica Neue","Lucida Grande",s
 	// padding: 0 3px;
 }
 .reset {margin:0; padding:0;}
+.clearBoth {clear:both;}
 /* ----------- FORMS ------------ */
 .error, .notice, .success, .warning { 
 	padding:.8em; margin-bottom:1em; border:2px solid #ddd; 
@@ -152,30 +152,29 @@ span.amp, em.amp {
 a, a:visited { color: $linkColor; }
 a:hover { color: $linkColorHover;}
 body {
-	background: #777777 url(/img/argyle-light.png) left top repeat;
+	background:$baseColor;
 	color: $textColor;
-	//@extend .test;
-	//font-family: $helvetica;
-	font-family: $droidsans;
+	font-family: $helvetica;
 }
 // This is the only place where any styles are declared on .container. It's not part of the grid framework.
 .container {
-	//padding:0 20px;
-	//background:#fff url(/img/tiny_grid.png) left top repeat;
-	background:$baseColor;
 	margin:0 auto;
-	padding:0 30px;
+	padding:0 50px;
 	@extend .clearfix;
 	@include desktop-and-up {
-		max-width:900px; // For desktop, we'll make the max 960.
+		max-width:860px; // For desktop, we'll make the max 960.
 	}
-	@include tablet-landscape-and-down {
-		//width:96%; // Let's leave a little padding for smaller screens. Using margin so our width computations don't get messed up.
-		//margin:0 2%;
+	@include mobile-landscape-and-down {
+		width:92%; // Let's leave a little padding for smaller screens. Using margin so our width computations don't get messed up.
+		padding-left:4%;
+		padding-right:4%;
 	}
 }
 .container.main {
 	padding-bottom:40px;
+	padding-top:40px;
+	background:#fff;
+	border: 1px solid darken($baseColor, 5%);
 }
 // Responsive images.
 .row img {
@@ -186,114 +185,97 @@ body {
 h1, h2, h3 {
 	font-weight:700;
 }
-// header
 header.container {
-	background:transparent;
-	max-width:960px;
-	padding:0;
-	ul {
-		padding:0;
-		text-align:right;
+	position:relative;
+	#logo {
+		a {
+			text-decoration:none;
+			display:inline-block;
+		}
+		text-align:center;
+		@include tablet-portrait-and-down {
+			margin-bottom:0;
+		}
+	}
+	#nav {
+		float:right;
+		display:inline-block;
+		position:absolute; bottom:0; right:0;
 		li {
 			display:inline-block;
 			list-style-type: none;
 			margin:0 10px;
 		}
+		@include tablet-portrait-and-down {
+			float:none;
+			text-align:center;
+			position: static;
+			margin-left:0;
+			padding-left:0;
+			width:100%;
+		}
+	}
+}
+// aboutTease
+.aboutTease {
+	text-align: center;
+	padding-bottom:0;
+	p {
+		font-family:$georgia; font-style: italic;
+		font-size:1.2em;
+		color:desaturate(lighten($rubyColor, 70%), 40%);
+		text-shadow:0 1px 0 darken($rubyColor, 20%);
+	}
+}
+// aboutFull - has .hidden by default
+.aboutFull {
+	position:relative;
+	opacity:1;
+	height:auto;
+	@include transition-property(all);
+  	@include transition-duration(1s);
+  	&.collapsed {
+  		opacity:0;
+  		height:0;
+  		overflow:hidden;
+  	}
+  	.closeAboutFull {
+		position:absolute; top:0; right:0;
+		font-weight:bold;
+		color:darken($rubyColor, 50%);
+	  	@include text-shadow(0 1px 0 lighten($rubyColor, 10%));
+	  	text-decoration:none;
+		&:hover {
+			color:#fff;
+		}
 	}
 }
 // footer
 footer.container {
-	background:transparent;
 	max-width:960px;
-	padding:0 0 60px 0;
+	padding:0 0 30px 0;
 	text-align:center;
-	font-size:.9em;
+	font-size:.85em;
 }
 header, footer {
-	color:lighten($textColor, 70%);
-	@include text-shadow(0 1px 0 $textColor);
+	color:$textColor;
 	a {
-		color:#fff;
-		font-weight:700;
+		color:$rubyColor;
 		text-decoration:none;
 		@include transition-property(color);
   		@include transition-duration(.2s);
-  		&:visited {
-  			color:#fff;
-  		}
-		&:hover {
+		&:visited {
 			color:$rubyColor;
 		}
-	}
-}
-#aboutBox {
-	overflow:hidden;
-	//font-family:$IMfell; font-size:1.2em;
-	position:relative;
-	@extend .clearfix;
-	background:$rubyColor;
-	color:lighten($textColor, 100%);
-	a {
-		color:#fff;
-	}
-	.iconrow {
-		text-align:center;
-		font-size:1.7em;
-		a {
-			text-decoration: none;
-			display:inline-block; margin:0 5px;
-			@include tablet-portrait-only {
-				margin:0;
-			}
-			//color:darken($baseColor, 50%);
-			color:darken($rubyColor, 20%);
-			@include text-shadow(0 1px 0 lighten($rubyColor, 10%));
-			&:hover {
-				color:$baseColor;
-			}
-		}
-		@include mobile-only {
-			margin-bottom:0;
-		}
-	}
-	.closeAboutBox {
-		font-size:2em;
-		text-decoration: none;
-		position:absolute; bottom:0; right:15px;
-		color:$baseColor;
-		@include text-shadow(0 1px 0 darken($baseColor, 80%));
 		&:hover {
-			color:$baseColor;
+			color:darken($rubyColor, 50%);
 		}
 	}
-	@include transition-property(opacity, position);
-  	@include transition-duration(1s, 1s);
-  	@include transition-timing-function(ease-in, ease-in);
-  	top:-40px;
-  	height:0;
-	opacity:0;
-	&.open {
-		height:auto;
-		opacity:1;
-		padding-top:20px; padding-bottom:20px; // Height 0 still leaves padding, so we have to do it here.
-		top:0;
-	}
-}
-.mug {
-	text-align: center;
-	img {
-		@include border-radius(50%);
-		@include mobile-only {
-			max-width:50%;
-		}
-	}
-	
 }
 // Pre
 .highlight {
 	padding:10px 20px;
 	@include border-radius(10px);
-	//background:#fff url(/img/tiny_grid.png) left top repeat
 	border:1px solid $textColor;
 	font-size:.9em; line-height:1.1em;
 }
@@ -316,54 +298,110 @@ header, footer {
 		margin-bottom:.5em;
 	}
 }
-// sidebar
-.sidebar {
-	background:darken($baseColor, 2%);
-	border-top:1px solid darken($baseColor, 12%);
-	border-bottom:1px solid darken($baseColor, 12%);
-	//margin:10px 0;
-	padding:0 20px;
-	// font-family:$georgia;
-}
-// resources resources list
-.resources {
-	background:darken($baseColor, 2%);
-	border-top:1px solid darken($baseColor, 12%);
-	border-bottom:1px solid darken($baseColor, 12%);
-	margin-top:50px;
-	padding:5px 10px;
-	font-size:.8em;
-	li {
-		list-style-type:none;
+.redBox {
+	@extend .clearfix;
+	background:$rubyColor;
+	@include background-image(linear-gradient($rubyColor, darken($rubyColor, 6%)));
+	//@include background-image(radial-gradient($rubyColor, darken($rubyColor, 8%)));
+	color:lighten($textColor, 90%);
+	@include text-shadow(1px 1px 0 darken($rubyColor,10%));
+	a {
+		color:#fff;
 	}
-	@include mobile-only {
-		margin-bottom:3em;
+}
+.mug {
+	float:left; margin:0 15px 5px 0;
+	text-align: center;
+	width:30%;
+	img {
+		@include border-radius(50%);
+	}
+}
+.iconrow {
+	font-size:1.7em;
+	@extend .reset;
+	a {
+		text-decoration: none;
+		display:inline-block; margin:0 5px;
+		@include tablet-portrait-only {
+			margin:0;
+		}
+		color:darken($rubyColor, 20%);
+		@include text-shadow(0 1px 0 lighten($rubyColor, 10%));
+		&:hover {
+			color:$baseColor;
+		}
+	}
+}
+.techList {
+	list-style-type:none;
+	padding-left:0;
+	li {
+		em {
+			font-style:	normal; font-size:.8em;
+			color: lighten($rubyColor, 45%);
+			text-shadow:none;
+			a {
+				color: lighten($rubyColor, 45%);
+				&:visited, &:active  {
+					color: lighten($rubyColor, 45%);
+				}
+				&:hover {
+					color: lighten($rubyColor, 95%);
+				}
+			}
+		}
+	}
+}
+
+article.entry {
+	.articleTopLinks {
+		@extend .clearfix;
+		font-size: .85em;
+		a {
+			white-space: nowrap;
+			text-decoration:none;
+			vertical-align: middle;
+			i {
+				color: lighten($textColor, 55%);
+				font-size:1.6em;
+				vertical-align: middle;
+				display:inline-block;
+				margin:0 5px;
+			}
+		}
+		.backLink {
+			float:left;
+
+		}
+		.rssLink {
+			float:right;
+		}
+	}
+	h1 {
+		@extend .reset;
+		text-align:center;
+		font-size:1.6em;
+		text-transform:uppercase;
+		letter-spacing: -1px;
+	}
+	.meta {
+		@extend .soft;
+		text-align:center;
 		margin-top:0;
 	}
+	h2, h3 {
+		color: $rubyColor;
+	}
+}
+#disqus_thread {
+	width:100%;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 // Sample single level buttons - Now compass friendly!
 a.btn, input.btn {
 	&.green {
@@ -382,23 +420,8 @@ a.btn, input.btn {
 input.btn {
 	text-align:center;
 }
-#logo {
-	text-align:center;
-	letter-spacing: -1px;
-	background:transparent url(/img/ruby.png) center bottom no-repeat;
-	@include retina {
-		background:transparent url(/img/ruby_@2x.png) center bottom no-repeat;
-		background-size: 50% auto;
-	}
-	padding-bottom:1em;
-	em {
-		font-weight:200;
-		color:lighten($textColor, 30%);
-	}
-	span {
-		color:$rubyColor;
-	}
-}
+
+
 // Sample Box
 .mixinBoxShadowExample {
 	display:inline-block;
@@ -429,39 +452,7 @@ a.multi-line-button {
 input[type=text]{
 	@include input-placeholder(#ff0080);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 

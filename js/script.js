@@ -2,8 +2,8 @@
 // On Dom ready,
 $(function() {
 
-	$('#aboutLink, .closeAboutBox').click( function(){
-		$('#aboutBox').toggleClass('open');
+	$('.closeAboutFull').click( function(){
+		$('.aboutFull').toggleClass('collapsed');
 		return false;
 	});
 

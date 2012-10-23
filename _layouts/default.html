@@ -14,7 +14,7 @@
 	<title>{{ page.title }}</title>
 	<meta name="description" content="">
 	<meta name="author" content="Jeremy Ricketts" />
-	<!-- <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" /> -->
+	<link href="/atom.xml" rel="alternate" title="Newbie On Ruby" type="application/atom+xml" />
 
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<!-- <meta name="viewport" content="width=device-width"> -->
@@ -37,38 +37,53 @@
 	   chromium.org/developers/how-tos/chrome-frame-getting-started -->
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-	<div class="container" id="aboutBox">
-		<div class="row">
-			<div class="span3">
-				<p class="mug"><img src="/img/avatar_200_200_@2x.png" alt="Jeremy Ricketts"></p>
-				<p class="iconrow"><a href="http://twitter.com/jeremyricketts/" title="Twitter"><i class="icon-twitter"></i></a> <a href="https://github.com/jeremyricketts" title="Github"><i class="icon-github"></i></a> <a href="mailto:email@jeremyricketts.com" title="Email"><i class="icon-envelope"></i></a> <a href="http://jeremyricketts.com" title="My Personal Website"><i class="icon-globe"></i></a></p>
-			</div>
-			<div class="span8">
-				<h2>Ruby, Rails <span class="amp">&amp;</span> beyond.</h2>
-				<p class="hideForMobile">&larr;Yup. That's me. Jeremy.</p>
-				<p>For years, I've been employed as a designer and front-end developer. You might call me a "devigner". I'm about 20% pencil &amp; paper, 30% Photoshop, and 50% HTML/CSS/JS.</p>
-				<p>Like many devigners, I've always wanted to get into programming. Although I've dabbled in PHP (and completed some fairly complex projects using <a href="http://expressionengine.com" title="Expression Engine">Expression Engine</a>) I'd really like to do some "real" programming.</p>
-				<p>Let's make some magic happen.</p>
-			</div>
-			<a class="closeAboutBox" href="#" title="Close"><i class="icon-remove-sign"></i></a>
-		</div>
-	</div>
-
 	<header class="container">
-		<ul>
-			<li><a href="/" title="home">home</a></li>
-			<li><a id="aboutLink" href="#" title="about">about</a></li>
-			<li><a href="#" title="resources">resources</a></li>
-		</ul>
-	</header>
-	
-	<div class="container main" role="main"><!-- Can also be named container960max. See style.scss for sample styling. -->
-
 		<div class="row">
 			<div class="span12">
-				<h1 id="logo">newbie<em class="amp">on</em><span>ruby</span></h1>
+				<h1 id="logo">
+					<a href="/" title="newbieonruby.com">
+						<img src="/img/logo.png" alt="Newbie On Ruby">
+					</a>
+				</h1>
+				<ul id="nav">
+					<li><a href="/" title="home">home</a></li>
+					<li class="closeAboutFull"><a href="#" title="about" class="closeAboutFull">about</a></li>
+				</ul>
 			</div>
 		</div>
+	</header>
+
+	<div class="container redBox">
+		<div class="row aboutTease">
+			<div class="span12">
+				<p>A designer's adventure adventure into the world of ruby <span class="amp">&amp;</span> rails.</p>
+			</div>
+		</div>
+		<div class="row aboutFull collapsed">
+			<div class="span6 mobileFullRow">
+				<h3>About this site</h3>
+				<p>First, this site serves a kind of journal. After all, it's nice to see your progress. Secondly, I'm hoping that the articles are helpful to others. I've made a career for myself by using knowledge that other people took the time to write down and post to the web. Time to give back a little.</p>
+				<h3>Under the hood</h3>
+				<ul class="techList">
+					<li><a href="https://github.com/mojombo/jekyll" title="Jekyll">Jekyll</a><em> - Jekyll is a simple, blog aware, static site generator written in ruby.</em></li>
+					<li><a href="http://sass-lang.com/" title="Sass">Sass</a> <span class="amp">&amp;</span> <a href="http://compass-style.org/" title="Compass">Compass</a><em> - SASS extends the capabilities of CSS and makes it more enjoyable. Compass is the frosting on the SASS cupcake.</em></li>
+					<li><a href="http://git-scm.com/" title="Git">Git</a><em> - Source control. Every now and then, I'll commit this blog to my <a href="https://github.com/jeremyricketts/newbieonruby" title="github repo">github repo</a> which you can clone if you'd like.</em></li>
+					<li><a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu Linux</a><em> - My web server is a little LAMP server running Ubuntu hosted over at <a href="http://www.linode.com/" title="Linode">Linode</a>.</em></li>
+				</ul>
+			</div>
+			<div class="span6 mobileFullRow">
+				<h3>About the author</h3>
+				<div class="mug"><img src="/img/avatar_200_200_@2x.png" alt="Jeremy Ricketts"></div>
+				<p class="iconrow"><a href="http://twitter.com/jeremyricketts/" title="Twitter"><i class="icon-twitter"></i></a> <a href="https://github.com/jeremyricketts" title="Github"><i class="icon-github"></i></a> <a href="mailto:email@jeremyricketts.com" title="Email"><i class="icon-envelope"></i></a> <a href="http://jeremyricketts.com" title="My Personal Website"><i class="icon-globe"></i></a></p>
+				<p>&larr; Yup. That's me. Jeremy.</p>
+				<p class="clearBoth">Most actors really want to direct. Directors secretly want to act. So they say.</p>
+				<p>For years I've been employed as a designer and front-end developer. I'm about 20% pencil &amp; paper, 40% Photoshop, and 40% html/css/js. I've always wanted to get into programming. Although I've dabbled in PHP (and completed some fairly complex projects using <a href="http://expressionengine.com/showcase/interview/jeremy_ricketts_coffee_depot" title="Expression Engine Interview">Expression Engine</a>) I'd really like to do some "real" programming.</p>
+				<a href="#" title="Close" class="closeAboutFull">close</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container main" role="main"><!-- Can also be named container960max. See style.scss for sample styling. -->
 
 		{{ content }}
 
@@ -78,11 +93,33 @@
 
 		<div class="row">
 			<div class="span12">
-				<p>Steal anything from this site you want. Just link back. Or not. Whatev man.</p>
+				<p>Share and share alike.</p>
 			</div>
 		</div>
 
 	</footer>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="span12">
+				<div id="disqus_thread"></div>
+		        <script type="text/javascript">
+		            var disqus_shortname = 'newbieonruby';
+		            var disqus_title = '{{ page.title }}'; 
+
+		            (function() {
+		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		            })();
+		        </script>
+			</div>
+
+		</div>
+
+	</div>
 
 
 	<!-- JavaScript at the bottom for fast page loading -->
