@@ -6,8 +6,15 @@ layout: default
 	<article class="span12 entry">
 
 		<div class="articleTopLinks">
-			<span class="backLink"><a href="/" title="View all articles"><i class="icon-chevron-left"></i> articles</a></span>
-			<span class="rssLink"><a href="/atom.xml" title="RSS feed">rss <i class="icon-rss"></i></a></span>
+			<span class="backLink">
+				<a href="/" title="View all articles"><i class="icon-chevron-left"></i> articles</a>
+			</span>
+			<!-- <a href="/atom.xml" title="RSS feed">rss <i class="icon-rss"></i></a></span> -->
+			{% if page.next.url %} 
+            <span class="forwardLink">
+            	<a href="{{page.next.url}}" title="next Post: {{page.next.title}}">next article <i class="icon-chevron-right"></i></a>
+            </span>
+        	{% endif %}
 		</div>
 
 		{{ content }}
