@@ -1,24 +1,31 @@
 ---
 layout: default
 ---
-<div class="row">
+<div class="container main" role="main">
+	<div class="row">
+		<article class="span12 entry">
+			{{ content }}
+		</article>
+	</div>
+</div><!-- /.container -->
 
-	<article class="span12 entry">
-
-		<div class="articleTopLinks">
-			<span class="backLink">
-				<a href="/" title="View all articles"><i class="icon-chevron-left"></i> articles</a>
-			</span>
-			<!-- <a href="/atom.xml" title="RSS feed">rss <i class="icon-rss"></i></a></span> -->
-			{% if page.next.url %} 
-            <span class="forwardLink">
-            	<a href="{{page.next.url}}" title="next Post: {{page.next.title}}">next article <i class="icon-chevron-right"></i></a>
-            </span>
-        	{% endif %}
+<div class="container greyBox">
+	<div class="row">
+		<div class="span12">
+			<div class="articleLinks">
+				<span class="backLink">
+					<a href="/" title="View all articles"><i class="icon-chevron-left"></i> articles</a>
+				</span>
+				{% if page.next.url %} 
+				<span class="forwardLink">
+					<a href="{{page.next.url}}" title="{{page.next.title}}">next article <i class="icon-chevron-right"></i></a>
+				</span>
+				{% endif %}
+			</div>
 		</div>
-
-		{{ content }}
-		
-	</article>
-
+	</div>
 </div>
+
+{% include shareAlike.html %}
+
+{% include disqus.html %}
