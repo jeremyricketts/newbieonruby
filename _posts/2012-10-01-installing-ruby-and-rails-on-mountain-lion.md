@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Installing Ruby and Rails on OSX 10.8
-category: XXXXX
+category: general
+published: false
 excerpt: After 5 years of Rails, you'd think it would be easier.
 ---
 

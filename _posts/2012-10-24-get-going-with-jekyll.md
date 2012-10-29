@@ -2,6 +2,7 @@
 layout: post
 title: Get Going With Jekyll
 category: nor
+published: true
 excerpt: Jekyll is what's used to drive this site. Here's what I learned.
 ---
 
