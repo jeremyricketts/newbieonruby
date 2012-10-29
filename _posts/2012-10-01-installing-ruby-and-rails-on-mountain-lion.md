@@ -1,0 +1,43 @@
+---
+layout: post
+title: Installing Ruby and Rails on OSX 10.8
+category: XXXXX
+excerpt: After 5 years of Rails, you'd think it would be easier.
+---
+
+# {{ page.title }}
+<p class="meta">October 1st, 2012.</p>
+
+## This is an H2 using markdown.
+
+A link [link](http://jeremyricketts.com/). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
+
+* This
+* Is a
+* List
+
+### This is an H3
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
+
+### Here is some code
+
+{% highlight ruby %}
+# Public: Duplicate some text an abitrary number of times.
+#
+# text  - The String to be duplicated.
+# count - The Integer number of times to duplicate the text.
+#
+# Examples
+#
+#   multiplex('Tom', 4)
+#   # => 'TomTomTomTom'
+#
+# Returns the duplicated String.
+def multiplex(text, count)
+  text * count
+end
+{% endhighlight %}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce libero magna, blandit venenatis pellentesque eleifend, suscipit in lacus. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam cursus dignissim massa ac tincidunt.
+
