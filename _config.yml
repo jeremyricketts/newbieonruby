@@ -9,3 +9,5 @@ permalink: /:title/
 post_dirs: true
 
 exclude: deploy.sh, test.html, config.rb, BCKP_posts
+#exclude: deploy.sh, config.rb, */style.scss
+#include: .htaccess
