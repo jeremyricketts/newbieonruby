@@ -48,7 +48,7 @@ I promised myself I would check out Rails at some point. I bought DHH's "Agile D
 
 Now, years later, I've learned my lesson about buying books about a piece of software that is evolving as fast as Rails. They just can't keep up. But that's okay, because there are a lot of other options for learning Rails online. Some free, some pay-for.
 
-## Evolution and improvement
+## Reason #1: Evolution and improvement
 
 Although I never found the time to dive in, I kept an eye on Rails. As the framework matured, there are some milestones that stood out to me. 
 
@@ -78,7 +78,7 @@ For better or for worse, I don't write vanilla javascript anymore. I write jQuer
 
 Among front-end developers, SASS is a game changer. CSS feels stupid sometimes. To anyone writing CSS all day, SASS a blessed relief. When DHH announced that it was going to be native to Rails 3.1 (and indeed, the *default*) I thought it was an excellent move. At the time, the change was controversial but I personally think the Rails team got it right. It also made for the most epic GitHub comment thread&hellip; [ever](https://github.com/rails/rails/commit/9f09aeb8273177fc2d09ebdafcc76ee8eb56fe33).
 
-## The community
+## Reason #2: The community
 
 ### It's large
 
@@ -98,13 +98,11 @@ The excitement about the next version of Rails is common among Rails devs I've t
 
 Oh, and then there's [Why’s (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html). How awesome is that?
 
-## Ruby
-
-### It reads well
+## Reason #3: Ruby reads well
 
 As a non-developer type, when I look at a massive block of C# or Python it takes me a while to figure out what's going on. I'm a little better at PHP only because I've has some experience with it. When I look at a chunk of Ruby, I feel like it "reads" better. This is what initially attracted me to jQuery. People have called jQuery "expressive" and I've heard the same word used to describe Ruby.
 
-## Resources for learning
+## Reason #4: Many resources for learning
 
 At the local bookstore there's generally an entire row of books dedicated to Ruby and/or Rails. There are behemoth reference books for every language out there, but when it comes to PHP and Ruby in particular, there's also a large array of smaller topical books that really fill out the shelf. They don't feel like textbooks &mdash; they feel more "entrepreneurial" in nature. If that makes sense.
 
@@ -118,7 +116,7 @@ Then there are the online resources, which is what I'll be focusing on as I lear
 * [TryRuby.org](http://tryruby.org/levels/1/challenges/0) &mdash; Another Why creation.
 * [Ruby Source .com](http://rubysource.com/) &mdash; Full of tutorials.
 
-## All the cool kids are doing it. <span class="soft">&hellip;still</span>
+## Reason #5: All the cool kids are doing it. <span class="soft">&hellip;still</span>
 
 As of 2012, Rails is now 8 years old. When it started getting traction years ago, some more cynical bloggers (this was pre-Twitter&hellip; which itself was originally a Rails app) took issue with the fanboy-like craze that ensued that lasted for a year or two. After all, there are new programming languages and frameworks emerging all the time. This was surely another flash in the pan.
 
@@ -130,7 +128,7 @@ I recently posed this question to a group of web geeks at [a local meetup](http:
 
 I'd say half of the crowd there were Ruby developers. Although they were clearly excited about some of the new server-side javascript frameworks like [node.js](http://nodejs.org/) and many felt like Rails can be overkill for smaller projects &mdash; they all agreed that Rails was still relevant and was improving.
 
-## Get a job kid
+## Reason #6: Jobs
 
 About once a week I'll get an enthusiastic email or call from a tech recruiter with an "awesome opportunity" for a "Rails Rockstar&trade;." Okay, so most of these recruiters, God bless them, are totally clueless about technology. But the fact is, there is a lot of good Ruby and Rails work out there. Especially if what you're interested in is web technology.
 
@@ -150,7 +148,7 @@ The other intimidating thing about Python is that the Python developers I know (
 
 <img class="imgRight img33 imgBorderDark" src="/img/content/bumper-bowling.jpeg" alt="Bumper Bowling">
 
-Does this mean that using Django **requires** that you be a proper hacker to use it? Of course not. I've just noted that the men and women I've met who are really into Django are a lot (a *lot*) smarter than me. And I've met some Rails developers who made me think "Well if they can do it, I'm sure I can figure it out." I'm not trying to work for NASA. **If Rails is perceived as bumper bowling non-programmers, that's fine by me.**
+Does this mean that using Django **requires** that you be a proper hacker to use it? Of course not. I've just noted that the men and women I've met who are really into Django are a lot (a *lot*) smarter than me. And I've met some Rails developers who made me think "Well if they can do it, I'm sure I can figure it out." I'm not trying to work for NASA. **If Rails is perceived as bumper bowling for non-programmers, that's fine by me.**
 
 ## Conclusion
 
