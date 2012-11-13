@@ -97,6 +97,8 @@ So, I think there's some sort of regex bug going on or something. If the string 
 
 ### Working with .htaccess
 
+*UPDATE: Solved! [How to keep Jekyll from ignoring your .htaccess file](/jekyll-include-htaccess/).*
+
 I wanted to remove the .html extension that Jekyll gives to all post URL's. Initially, I thought the best way to do this was by using an <code>.htaccess</code> file. Old dog. New tricks. You know the deal.
 
 As it turns out, there are better ways of completing the task of removing the .htmls' in URL's. For one-off pages, I simply put the file in a folder, and renamed the file to index.html. As for the URL's of posts, Jekyll has a way of defining the URL structure you want. In my <code>\_config.yml</code>:

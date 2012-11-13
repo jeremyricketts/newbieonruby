@@ -3,7 +3,7 @@ layout: post
 title: Why Ruby on Rails?
 category: general
 published: true
-excerpt: Why I chose to learn Ruby on Rails.
+excerpt: After all, there are lots of other options.
 ---
 
 # {{ page.title }}
