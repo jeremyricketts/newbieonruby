@@ -19,13 +19,13 @@ I had already performed this task on Ubuntu while setting up my little LAMP web 
 
 Without going into a ton of painful detail, it seemed Apple had recently pushed an update to XCode command line tools that was giving RVM [trouble](http://stackoverflow.com/questions/11664835/mountain-lion-rvm-install-1-8-7-x11-error) (stackoverflow link). No matter what I tried, I just couldn't get it going.
 
-I knew I didn't wan to deal with this every time Apple updates XCode. After all, that was the whole reason for installing RVM in the first place.
+I don't want to deal with this every time Apple updates XCode. After all, that's the whole reason for installing RVM.
 
 <img src="/img/content/xcode-update.png">
 
 ### rbenv
 
-A friend of mine said that he had better luck with [rbenv](https://github.com/sstephenson/rbenv). So, I gave it a try. I already had [homebrew](http://mxcl.github.com/homebrew/) installed so I liked the fact that it was as easy as:
+A friend of mine said that he had better luck with [rbenv](https://github.com/sstephenson/rbenv). So, I gave it a try. I already had [homebrew](http://mxcl.github.com/homebrew/) installed so installing rbenv was as easy as:
 
 <pre>
 <code data-language="bash">
@@ -35,15 +35,15 @@ brew install ruby-build
 </code>
 </pre>
 
-### rbenv, GCC, and homebrew
+### rbenv, GCC, and Homebrew
 
-Everything was fine until I tried installing an earlier version of Ruby (1.8.7). Like RVM, rbenv wanted to compile the interpreter using GCC. GAH! 
+Everything was fine until I tried installing an earlier version of Ruby (1.8.7). Like RVM, rbenv wanted to compile the interpreter using GCC. Doh!
 
-rbenv pointed me towards [https://github.com/kennethreitz/osx-gcc-installer/downloads](https://github.com/kennethreitz/osx-gcc-installer/downloads) to download a standalone GCC installer. While in my research, I came across [this page](http://hathaway.cc/2012/04/how-to-setup-mac-os-x-lion-for-ruby-and-rails-development/) where Akshay Gupta added [in the comments](http://hathaway.cc/2012/04/how-to-setup-mac-os-x-lion-for-ruby-and-rails-development/#comment-591903311):
+rbenv pointed me towards [https://github.com/kennethreitz/osx-gcc-installer/downloads](https://github.com/kennethreitz/osx-gcc-installer/downloads) to download a standalone GCC installer. While researching this option, I came across [this page](http://hathaway.cc/2012/04/how-to-setup-mac-os-x-lion-for-ruby-and-rails-development/) where Akshay Gupta added [in the comments](http://hathaway.cc/2012/04/how-to-setup-mac-os-x-lion-for-ruby-and-rails-development/#comment-591903311):
 
 > It is not generally safe to install this package over the top of Xcode. It was designed for people who want the compiler and its dependencies without having to install Xcode. If you've installed the Command Line Tools for Xcode, it will overwrite many of the files, and probably break all kinds of things.
 
-This matched up with other comments I'd read about installing the standalone GCC on top of Xcode command line tools. Akshay suggested, instead:
+This matched up with other comments I'd read. In general, if you've already installed Xcode's command line tooks, don't install the standalone GCC. Instead, Akshay suggested using Homebrew:
 
 <pre>
 <code data-language="bash">
@@ -53,7 +53,7 @@ brew install apple-gcc42
 </code>
 </pre>
 
-Blam! All done. And no fooling with sym links or GCC or whatever.
+Blam! All done. And no fooling with symlinks or GCC or whatever or worrying about Xcode or OSX updates. (Although, I can't say I'm 100% sure what /homebrew-dupes is all about.)
 
 ### Further reading:
 
