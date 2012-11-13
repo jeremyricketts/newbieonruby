@@ -63,7 +63,7 @@ By noon the next day, someone suggested this:
 
 > In your Gemfile specify the ruby version like so <code>ruby '1.9.3'</code> right under the sources.
 
-So I added this second line to the top of my Gemfile:
+So, I added this second line to the top of my Gemfile:
 
 <pre>
 <code data-language="ruby">

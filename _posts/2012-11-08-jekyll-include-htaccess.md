@@ -36,7 +36,7 @@ RewriteRule ^(.*)$ http://newbieonruby.com/$1 [r=301,nc]
 </pre>
 <p class="expandCode"><a href="#" title="Expand"><i class="icon-caret-left"></i> expand <i class="icon-caret-right"></i></a></p>
 
-All set! Now when i run my Jekyll command, a nice pretty <code>.htaccess</code> file will show up.
+All set! Now when I run my Jekyll command, a nice pretty <code>.htaccess</code> file will show up.
 
 
 
