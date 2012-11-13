@@ -6,7 +6,7 @@ layout: nil
  
  <title>Newbie On Ruby</title>
  <link href="http://newbieonruby.com/atom.xml" rel="self"/>
- <link href="http://newbieonruby.com.com/"/>
+ <link href="http://newbieonruby.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://newbieonruby.com/</id>
  <author>
