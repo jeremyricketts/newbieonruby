@@ -96,7 +96,7 @@ Events like [Rails Rumble](http://railsrumble.com/) show that there's a communit
 
 The excitement about the next version of Rails is common among Rails devs I've talked to. I just haven't *personally* seen .NET developers, for example, get really excited about the next MVC framework Microsoft is working on. 
 
-Oh, and then there's [Why’s (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html). How awesome is that?
+Oh, and then there's [Why’s (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html). How awesome is that? And there's [tryruby.org](http://tryruby.org). And a [bunch](http://kidsruby.com/download) of [resources](http://teachingkids.railsbridge.org/) for [kids](http://ruby4kids.com/ruby4kids). The list goes on.
 
 ## Reason #3: Ruby reads well
 
@@ -152,7 +152,7 @@ Does this mean that using Django **requires** that you be a proper hacker to use
 
 ## Conclusion
 
-When really comes down to it, I think Ruby is strong on my radar and it has been for years now. Developers I meet, articles I read, projects I hear about, [useful scripts I discover on GitHub](https://github.com/Schultz/slicedns2linode) throughout my day&hellip; it all points to Ruby. SASS and Compass are written in Ruby. Some of my favorite startups and websites are built with Rails. There's no shortage of Ruby jobs. My local Ruby meetup is fun and interactive.
+When it really comes down to it, I think Ruby is strong on my radar and it has been for years now. Developers I meet, articles I read, projects I hear about, [useful scripts I discover on GitHub](https://github.com/Schultz/slicedns2linode) throughout my day&hellip; it all points to Ruby. SASS and Compass are written in Ruby. Some of my favorite startups and websites are built with Rails. There's no shortage of Ruby jobs. My local Ruby meetup is fun and interactive.
 
 So, for myself, it's Ruby or bust!
 
