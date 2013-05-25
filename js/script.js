@@ -22,6 +22,12 @@ $(function() {
 		return false;
 	});
 
+	console.log(window.location.toString().contains("franky"));
+
+	// if() {
+ //       alert("your url contains the name franky");
+ //    }
+
 });
 
 

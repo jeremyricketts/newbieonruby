@@ -44,8 +44,8 @@ build/config/buildinfo.properties
 
 # OTHER:
 BCKP_posts/
-deploy.sh
 _site/
+_resources/
 
 
 

@@ -3,13 +3,11 @@ rdiscount:
     extensions: [smart]
 pygments: false
 #server_port: 80
-# auto: true
 
 # https://github.com/mojombo/jekyll/issues/156
 # permalink: /:categories/:title/
 permalink: /:title/
 post_dirs: true
 
-exclude: deploy.sh, test.html, config.rb, BCKP_posts
 #exclude: deploy.sh, config.rb, */style.scss
 #include: .htaccess WTF: https://github.com/mojombo/jekyll/issues/363
